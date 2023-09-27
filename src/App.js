@@ -3,6 +3,9 @@ import PokemonList from "./components/PokemonList";
 import PageChanger from "./components/PageChanger";
 import axios from "axios";
 
+import "./App.css";
+import { SearchBar } from "./components/SearchBar";
+
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [currentPageUrl, setCurrentPageUrl] = useState(
@@ -46,6 +49,10 @@ function App() {
         gotoNextPage={nextPageUrl ? gotoNextPage : null}
         gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
       />
+      <div className="search-bar-container">
+        <SearchBar />
+        <div>Search Results</div>
+      </div>
     </>
   );
 }
